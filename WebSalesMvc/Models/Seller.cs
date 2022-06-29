@@ -9,16 +9,21 @@ namespace WebSalesMvc.Models
     {
         public int Id { get; set; }
         [Display(Name = "Nome")]
+        [Required(ErrorMessage ="O campo nome é obrigatório")]
+        [StringLength(60, MinimumLength =3)]
         public string Name  { get; set; }
         [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "O campo email é obrigatório")]
         public string Email { get; set; }
 
         [Display(Name ="Data de nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "O campo data de nascimento é obrigatório")]
         public DateTime BirthDate  { get; set; }
         [Display(Name = "Salário base")]
         [DisplayFormat(DataFormatString ="{0:F2}")]
+        [Required(ErrorMessage = "O campo Salário base é obrigatório")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
