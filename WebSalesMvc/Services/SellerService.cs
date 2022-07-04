@@ -33,7 +33,7 @@ namespace WebSalesMvc.Services
         {
             var obj = await _context.Seller.FindAsync(id);
             _context.Seller.Remove(obj);
-            _context.SaveChangesAsync();
+            await_context.SaveChangesAsync();
         }
         public async Task UpdateAsync(Seller obj)
         {
