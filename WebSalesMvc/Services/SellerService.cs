@@ -23,7 +23,7 @@ namespace WebSalesMvc.Services
         public async Task InsertAsync(Seller obj)
         {
             _context.Add(obj);
-            _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
         }
         public async Task<Seller> FindByIdAsync(int id)
         {
@@ -33,7 +33,7 @@ namespace WebSalesMvc.Services
         {
             var obj = await _context.Seller.FindAsync(id);
             _context.Seller.Remove(obj);
-            await_context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
         public async Task UpdateAsync(Seller obj)
         {
